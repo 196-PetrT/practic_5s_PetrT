@@ -4,17 +4,18 @@
 
 
 
-double[] Array = new double[5]; // по другому не смог
+ // по другому не смог
 
-void GenerateArray()// метод создает ранд массив вещественных чисел
+double[] GenerateArray(int length)// метод создает ранд массив вещественных чисел
 {
-    
+    double[] Array = new double[length];
     Random rand = new Random();
     for (int i = 0; i < Array.Length; i++)
     {
         Array[i] = rand.NextDouble();
         Console.Write($"{Array[i]:F2} "); // обрезаю до второй запятой и вывожу
     }
+    return Array;
 
 }
 
@@ -33,5 +34,5 @@ double DifMaxMin(double[] Array) // метод считает разницу м�
     return max - min;
 }
 
-GenerateArray();
-Console.Write($"Разница между максимальным и минимальным элементов массива: {DifMaxMin(Array):F2}");
+double[] Arr = GenerateArray(5);
+Console.Write($"Разница между максимальным и минимальным элементов массива: {DifMaxMin(Arr):F2}");
